@@ -1,0 +1,2746 @@
+<robot name="InMoov" version="1.0">
+  <joint name="Empty.001_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00394 0.00025 -0.19163"/>
+    <parent link="base_node"/>
+    <child link="stand_link"/>
+  </joint>
+  <joint name="Empty.002_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 8.97279"/>
+    <parent link="stand_link"/>
+    <child link="torso_bottom_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="i01.head.eyeLeft.001_link_joint" type="revolute">
+    <limit lower="-0.34907" upper="0.34907" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 -1.57080" xyz="-1.08601 -0.29198 0.37576"/>
+    <parent link="i01.head.rothead_link"/>
+    <child link="i01.head.eyeLeft.001_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="i01.head.eyeLeft_link_joint" type="revolute">
+    <limit lower="-0.78530" upper="0.78530" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.00590 0.00000"/>
+    <parent link="i01.head.eyeLeft.001_link"/>
+    <child link="i01.head.eyeLeft_link"/>
+    <axis xyz="0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.head.eyeRight.001_link_joint" type="revolute">
+    <limit lower="-0.34907" upper="0.34907" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 -1.57080" xyz="-1.09644 0.29850 0.37576"/>
+    <parent link="i01.head.rothead_link"/>
+    <child link="i01.head.eyeRight.001_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="i01.head.eyeRight_link_joint" type="revolute">
+    <limit lower="-0.78530" upper="0.78530" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.00590 0.00000"/>
+    <parent link="i01.head.eyeRight.001_link"/>
+    <child link="i01.head.eyeRight_link"/>
+    <axis xyz="0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.head.jaw_link_joint" type="revolute">
+    <limit lower="0.00000" upper="0.17453" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 -1.57080" xyz="-0.36176 0.01121 0.32442"/>
+    <parent link="i01.head.rothead_link"/>
+    <child link="i01.head.jaw_link"/>
+    <axis xyz="0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.head.neck.001_link_joint" type="revolute">
+    <limit lower="-0.34907" upper="0.34907" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00390 0.29817 4.29073"/>
+    <parent link="torso_y_link"/>
+    <child link="i01.head.neck.001_link"/>
+    <axis xyz="0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.head.rollNeck_link_joint" type="revolute">
+    <limit lower="-0.34907" upper="0.34907" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 -0.00000 0.00435"/>
+    <parent link="i01.head.neck.001_link"/>
+    <child link="neck_link"/>
+    <axis xyz="0.00000 0.99994 0.01111"/>
+  </joint>
+  <joint name="i01.head.rothead_link_joint" type="revolute">
+    <limit lower="-0.52360" upper="0.52360" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 -0.00000 1.57080" xyz="0.00246 0.01503 0.24911"/>
+    <parent link="neck_link"/>
+    <child link="i01.head.rothead_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="i01.leftHand.index2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00258 0.34105 0.00685"/>
+    <parent link="i01.leftHand.index_link"/>
+    <child link="i01.leftHand.index2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.index3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00103 0.22697 0.00433"/>
+    <parent link="i01.leftHand.index2_link"/>
+    <child link="i01.leftHand.index3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.index_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-1.56854 -0.09096 -0.00330" xyz="0.32645 -0.01145 -0.94982"/>
+    <parent link="i01.leftHand.wrist.001_link"/>
+    <child link="i01.leftHand.index_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.majeure2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00272 0.35935 0.00722"/>
+    <parent link="i01.leftHand.majeure_link"/>
+    <child link="i01.leftHand.majeure2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.majeure3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00109 0.23915 0.00456"/>
+    <parent link="i01.leftHand.majeure2_link"/>
+    <child link="i01.leftHand.majeure3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.majeure_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-1.56854 0.00160 -0.00309" xyz="0.07161 -0.01170 -0.98881"/>
+    <parent link="i01.leftHand.wrist.001_link"/>
+    <child link="i01.leftHand.majeure_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.pinky0_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-1.56789 -0.68643 -0.00494" xyz="-0.24002 0.00108 -0.35218"/>
+    <parent link="i01.leftHand.wrist.001_link"/>
+    <child link="i01.leftHand.pinky0_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.pinky2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00225 0.29796 0.00599"/>
+    <parent link="i01.leftHand.pinky_link"/>
+    <child link="i01.leftHand.pinky2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.pinky3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 -0.00000" xyz="0.00090 0.19830 0.00378"/>
+    <parent link="i01.leftHand.pinky2_link"/>
+    <child link="i01.leftHand.pinky3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.pinky_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 0.94526" xyz="-0.43178 0.20489 0.00726"/>
+    <parent link="i01.leftHand.pinky0_link"/>
+    <child link="i01.leftHand.pinky_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.ringFinger_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 0.77485" xyz="-0.33329 0.15280 -0.00664"/>
+    <parent link="i01.leftHand.ringfinger0_link"/>
+    <child link="i01.leftHand.ringFinger_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.ringfinger0_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-1.56789 -0.68643 -0.00494" xyz="-0.05673 0.00101 -0.57588"/>
+    <parent link="i01.leftHand.wrist.001_link"/>
+    <child link="i01.leftHand.ringfinger0_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.ringfinger2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00258 0.34105 0.00685"/>
+    <parent link="i01.leftHand.ringFinger_link"/>
+    <child link="i01.leftHand.ringfinger2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.ringfinger3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00103 0.22697 0.00433"/>
+    <parent link="i01.leftHand.ringfinger2_link"/>
+    <child link="i01.leftHand.ringfinger3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.thumb1_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="1.51635 -0.09893 -0.00332" xyz="0.28234 -0.00002 -0.37340"/>
+    <parent link="i01.leftHand.wrist.001_link"/>
+    <child link="i01.leftHand.thumb1_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.thumb3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00001 -0.00000 0.00000" xyz="0.01229 -0.33047 -0.00704"/>
+    <parent link="i01.leftHand.thumb_link"/>
+    <child link="i01.leftHand.thumb3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.thumb_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.03182 -0.32566 0.83064" xyz="0.25977 -0.13332 -0.00800"/>
+    <parent link="i01.leftHand.thumb1_link"/>
+    <child link="i01.leftHand.thumb_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.leftHand.wrist.001_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 -0.61611" xyz="-0.00000 -0.00000 -0.16925"/>
+    <parent link="left_wrist_z_link"/>
+    <child link="i01.leftHand.wrist.001_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.index2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00258 -0.34105 -0.00685"/>
+    <parent link="i01.rightHand.index_link"/>
+    <child link="i01.rightHand.index2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.index3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00103 -0.22697 -0.00432"/>
+    <parent link="i01.rightHand.index2_link"/>
+    <child link="i01.rightHand.index3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.index_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="1.57305 0.09096 -0.01576" xyz="-0.32320 -0.00773 -0.95398"/>
+    <parent link="i01.rightHand.wrist.001_link"/>
+    <child link="i01.rightHand.index_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.majeure2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 -0.00000" xyz="-0.00272 -0.35935 -0.00722"/>
+    <parent link="i01.rightHand.majeure_link"/>
+    <child link="i01.rightHand.majeure2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.majeure3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00109 -0.23915 -0.00456"/>
+    <parent link="i01.rightHand.majeure2_link"/>
+    <child link="i01.rightHand.majeure3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.majeure_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="1.57305 -0.00160 -0.01597" xyz="-0.06841 -0.01284 -0.99297"/>
+    <parent link="i01.rightHand.wrist.001_link"/>
+    <child link="i01.rightHand.majeure_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.pinky0_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="1.57370 0.68643 -0.01412" xyz="0.24340 -0.00601 -0.35634"/>
+    <parent link="i01.rightHand.wrist.001_link"/>
+    <child link="i01.rightHand.pinky0_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.pinky2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00225 -0.29796 -0.00598"/>
+    <parent link="i01.rightHand.pinky_link"/>
+    <child link="i01.rightHand.pinky2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.pinky3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00090 -0.19830 -0.00378"/>
+    <parent link="i01.rightHand.pinky2_link"/>
+    <child link="i01.rightHand.pinky3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.pinky_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 0.94526" xyz="0.43178 -0.20489 -0.00726"/>
+    <parent link="i01.rightHand.pinky0_link"/>
+    <child link="i01.rightHand.pinky_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.ringFinger_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 0.77485" xyz="0.33328 -0.15280 0.00664"/>
+    <parent link="i01.rightHand.ringfinger0_link"/>
+    <child link="i01.rightHand.ringFinger_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.ringfinger0_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="1.57370 0.68643 -0.01412" xyz="0.06015 -0.00258 -0.58004"/>
+    <parent link="i01.rightHand.wrist.001_link"/>
+    <child link="i01.rightHand.ringfinger0_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.ringfinger2_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00258 -0.34105 -0.00685"/>
+    <parent link="i01.rightHand.ringFinger_link"/>
+    <child link="i01.rightHand.ringfinger2_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.ringfinger3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 0.00000 -0.00000" xyz="-0.00103 -0.22697 -0.00432"/>
+    <parent link="i01.rightHand.ringfinger2_link"/>
+    <child link="i01.rightHand.ringfinger3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.thumb1_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-1.62525 0.09893 -0.01574" xyz="-0.27888 0.00285 -0.37757"/>
+    <parent link="i01.rightHand.wrist.001_link"/>
+    <child link="i01.rightHand.thumb1_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.thumb3_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00001 -0.00000 0.00000" xyz="-0.01229 0.33047 0.00704"/>
+    <parent link="i01.rightHand.thumb_link"/>
+    <child link="i01.rightHand.thumb3_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.thumb_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.03182 -0.32566 0.83064" xyz="-0.25977 0.13332 0.00800"/>
+    <parent link="i01.rightHand.thumb1_link"/>
+    <child link="i01.rightHand.thumb_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.rightHand.wrist.001_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 0.63517" xyz="-0.00000 -0.00000 -0.16508"/>
+    <parent link="right_wrist_z_link"/>
+    <child link="i01.rightHand.wrist.001_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="i01.torso.midStom_link_joint" type="revolute">
+    <limit lower="-2.35619" upper="2.35619" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.06589 1.57080" xyz="-0.00213 0.05565 1.13807"/>
+    <parent link="torso_bottom_link"/>
+    <child link="torso_z_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="i01.torso.topStom_link_joint" type="revolute">
+    <limit lower="-0.34907" upper="0.34907" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 -1.57080" xyz="-0.06317 0.00033 1.01916"/>
+    <parent link="torso_z_link"/>
+    <child link="torso_y_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="left_elbow_x_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.06567 -0.00000 -0.00000" xyz="-0.01281 0.29228 -2.11577"/>
+    <parent link="left_shoulder_z_link"/>
+    <child link="left_elbow_x_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="left_shoulder_x_link_joint" type="revolute">
+    <limit lower="-1.57080" upper="2.35619" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 -0.00000" xyz="0.11351 0.00189 -0.37504"/>
+    <parent link="left_shoulder_y_link"/>
+    <child link="left_shoulder_x_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="left_shoulder_y_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00021 -0.00000 -0.00000" xyz="1.35472 -0.00337 2.80749"/>
+    <parent link="torso_y_link"/>
+    <child link="left_shoulder_y_link"/>
+    <axis xyz="0.00000 -0.99994 0.01111"/>
+  </joint>
+  <joint name="left_shoulder_z_link_joint" type="revolute">
+    <limit lower="-1.57080" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.62406 -0.00937 -0.59421"/>
+    <parent link="left_shoulder_x_link"/>
+    <child link="left_shoulder_z_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="left_wrist_z_link_joint" type="revolute">
+    <limit lower="-1.57080" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.41605 -0.00000 0.00000" xyz="-0.08767 -0.98766 -2.53936"/>
+    <parent link="left_elbow_x_link"/>
+    <child link="left_wrist_z_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="right_elbow_x_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.06567 0.00000 0.00000" xyz="0.00858 0.29228 -2.11577"/>
+    <parent link="right_shoulder_z_link"/>
+    <child link="right_elbow_x_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="right_shoulder_x_link_joint" type="revolute">
+    <limit lower="-1.57080" upper="2.35619" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.00000 -0.00000 -0.00000" xyz="-0.11351 0.00189 -0.37504"/>
+    <parent link="right_shoulder_y_link"/>
+    <child link="right_shoulder_x_link"/>
+    <axis xyz="-0.99994 0.00000 0.01111"/>
+  </joint>
+  <joint name="right_shoulder_y_link_joint" type="revolute">
+    <limit lower="0.00000" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00021 -0.00000 -0.00000" xyz="-1.34979 -0.00337 2.80749"/>
+    <parent link="torso_y_link"/>
+    <child link="right_shoulder_y_link"/>
+    <axis xyz="0.00000 0.99994 0.01111"/>
+  </joint>
+  <joint name="right_shoulder_z_link_joint" type="revolute">
+    <limit lower="-1.57080" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-0.62406 -0.00937 -0.59421"/>
+    <parent link="right_shoulder_x_link"/>
+    <child link="right_shoulder_z_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="right_wrist_z_link_joint" type="revolute">
+    <limit lower="-1.57080" upper="1.57080" effort="0.00000" velocity="0.78540"/>
+    <origin rpy="-0.41605 0.00000 0.00000" xyz="0.08767 -0.98766 -2.53936"/>
+    <parent link="right_elbow_x_link"/>
+    <child link="right_wrist_z_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <link name="base_node">
+    <visual name="stand">
+      <origin rpy="3.14159 -0.00000 3.14159" xyz="-0.00394 -0.00730 9.35280"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/stand.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.head.eyeLeft.001_link"/>
+  <link name="i01.head.eyeLeft_link">
+    <visual name="i01.head.eyeLeft.full">
+      <origin rpy="-0.00000 -0.00000 -0.00000" xyz="-0.29587 0.88079 -16.02298"/>
+      <material name="Material.035"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.011.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.head.eyeRight.001_link"/>
+  <link name="i01.head.eyeRight_link">
+    <visual name="i01.head.eyeRight.full">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.29460 0.89123 -16.02297"/>
+      <material name="Material.038"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.012.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.head.jaw_link">
+    <visual name="i01.head.mouth">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00732 0.15065 -15.97164"/>
+      <material name="Material.046"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.014.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.mouth.001">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00732 0.15065 -15.97164"/>
+      <material name="Material.046"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.086.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.mouth.002">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="0.00732 0.15065 -15.97164"/>
+      <material name="Material.046"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.087.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.head.neck.001_link"/>
+  <link name="i01.head.rothead_link">
+    <visual name="i01.head.full">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.013.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.001">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.068.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.002">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.069.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.003">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.070.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.004">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.071.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.005">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.072.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.006">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.073.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.007">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.074.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.008">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.075.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.009">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.076.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.010">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.077.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.011">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.078.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.012">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.079.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.013">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.080.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.014">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.081.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.full.015">
+      <origin rpy="0.00000 -0.00000 -1.57080" xyz="-0.21111 0.00389 -15.64721"/>
+      <material name="Material.044"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.082.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.index2_link">
+    <visual name="i01.leftHand.indexPhal2">
+      <origin rpy="1.98409 -0.61920 0.09256" xyz="-5.01271 5.25474 2.39178"/>
+      <material name="Material.614"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.019.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.index3_link">
+    <visual name="i01.leftHand.indexPhal3">
+      <origin rpy="1.98408 -0.61920 0.09256" xyz="-5.01374 5.02777 2.38745"/>
+      <material name="Material.618"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.020.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.index_link">
+    <visual name="i01.leftHand.indexPhal1">
+      <origin rpy="1.98409 -0.61920 0.09256" xyz="-5.01013 5.59578 2.39863"/>
+      <material name="Material.610"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.018.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.majeure2_link">
+    <visual name="i01.leftHand.majeurePhal2">
+      <origin rpy="1.98409 -0.61920 -0.00000" xyz="-4.21941 5.63616 2.39254"/>
+      <material name="Material.613"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.023.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.majeure3_link">
+    <visual name="i01.leftHand.majeurePhal3">
+      <origin rpy="1.98409 -0.61920 0.00000" xyz="-4.22050 5.39700 2.38798"/>
+      <material name="Material.617"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.024.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.majeure_link">
+    <visual name="i01.leftHand.majeurePhal1">
+      <origin rpy="1.98409 -0.61920 -0.00000" xyz="-4.21669 5.99551 2.39975"/>
+      <material name="Material.609"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.022.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.pinky0_link">
+    <visual name="i01.leftHand.WristSmall2">
+      <origin rpy="1.98409 -0.61920 0.68804" xyz="-7.22704 2.64375 2.38651"/>
+      <material name="Material.601"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.041.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.pinky2_link">
+    <visual name="i01.leftHand.pinkyPhal2">
+      <origin rpy="1.98409 -0.61921 -0.25722" xyz="-2.00407 6.63864 2.37327"/>
+      <material name="Material.611"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.028.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.pinky3_link">
+    <visual name="i01.leftHand.pinkyPhal3">
+      <origin rpy="1.98409 -0.61920 -0.25722" xyz="-2.00497 6.44033 2.36951"/>
+      <material name="Material.615"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.029.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.pinky_link">
+    <visual name="i01.leftHand.pinkyPhal1">
+      <origin rpy="1.98409 -0.61920 -0.25722" xyz="-2.00181 6.93659 2.37926"/>
+      <material name="Material.607"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.027.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.ringFinger_link">
+    <visual name="i01.leftHand.ringFingerPhal1">
+      <origin rpy="1.98409 -0.61920 -0.08681" xyz="-3.38539 6.39614 2.39315"/>
+      <material name="Material.608"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.032.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.ringfinger0_link">
+    <visual name="i01.leftHand.WristSmall">
+      <origin rpy="1.98409 -0.61920 0.68804" xyz="-7.22704 2.35455 2.38651"/>
+      <material name="Material.606"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.040.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.ringfinger2_link">
+    <visual name="i01.leftHand.ringFingerPhal2">
+      <origin rpy="1.98409 -0.61920 -0.08682" xyz="-3.38797 6.05509 2.38632"/>
+      <material name="Material.612"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.033.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.ringfinger3_link">
+    <visual name="i01.leftHand.ringFingerPhal3">
+      <origin rpy="1.98409 -0.61920 -0.08682" xyz="-3.38900 5.82812 2.38200"/>
+      <material name="Material.616"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.034.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.thumb1_link">
+    <visual name="i01.leftHand.ThumbBase">
+      <origin rpy="-1.08797 0.62375 -0.06004" xyz="-5.06759 -5.98847 -2.72986"/>
+      <material name="Material.603"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.035.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.thumb3_link">
+    <visual name="i01.leftHand.ThumbTip">
+      <origin rpy="-1.43269 0.82776 -1.11671" xyz="-8.38306 0.31675 -0.03957"/>
+      <material name="Material.605"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.038.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.thumb_link">
+    <visual name="i01.leftHand.ThumbMid">
+      <origin rpy="-1.43268 0.82776 -1.11670" xyz="-8.37077 -0.01374 -0.04665"/>
+      <material name="Material.604"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.037.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.leftHand.wrist.001_link">
+    <visual name="i01.leftHand.Wristlarge.001">
+      <origin rpy="0.41605 -0.00000 0.61611" xyz="-4.14720 2.41462 -6.97213"/>
+      <material name="Material.602"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.235.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.index2_link">
+    <visual name="i01.rightHand.indexPhal2">
+      <origin rpy="-1.15751 -0.61920 0.09256" xyz="5.01271 -5.25474 -2.39178"/>
+      <material name="Material.636"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.045.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.index3_link">
+    <visual name="i01.rightHand.indexPhal3">
+      <origin rpy="-1.15751 -0.61920 0.09256" xyz="5.01374 -5.02777 -2.38746"/>
+      <material name="Material.640"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.046.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.index_link">
+    <visual name="i01.rightHand.indexPhal1">
+      <origin rpy="-1.15751 -0.61920 0.09256" xyz="5.01012 -5.59578 -2.39863"/>
+      <material name="Material.632"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.044.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.majeure2_link">
+    <visual name="i01.rightHand.majeurePhal2">
+      <origin rpy="-1.15751 -0.61920 -0.00000" xyz="4.21941 -5.63616 -2.39254"/>
+      <material name="Material.637"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.049.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.majeure3_link">
+    <visual name="i01.rightHand.majeurePhal3">
+      <origin rpy="-1.15751 -0.61920 0.00000" xyz="4.22050 -5.39701 -2.38798"/>
+      <material name="Material.641"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.050.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.majeure_link">
+    <visual name="i01.rightHand.majeurePhal1">
+      <origin rpy="-1.15751 -0.61920 -0.00000" xyz="4.21669 -5.99551 -2.39976"/>
+      <material name="Material.633"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.048.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.pinky0_link">
+    <visual name="i01.rightHand.WristSmall2">
+      <origin rpy="-1.15751 -0.61920 0.68804" xyz="7.22704 -2.64375 -2.38651"/>
+      <material name="Material.630"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.067.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.pinky2_link">
+    <visual name="i01.rightHand.pinkyPhal2">
+      <origin rpy="-1.15751 -0.61921 -0.25722" xyz="2.00407 -6.63864 -2.37327"/>
+      <material name="Material.639"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.054.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.pinky3_link">
+    <visual name="i01.rightHand.pinkyPhal3">
+      <origin rpy="-1.15751 -0.61921 -0.25722" xyz="2.00497 -6.44034 -2.36949"/>
+      <material name="Material.643"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.055.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.pinky_link">
+    <visual name="i01.rightHand.pinkyPhal1">
+      <origin rpy="-1.15751 -0.61920 -0.25722" xyz="2.00181 -6.93660 -2.37926"/>
+      <material name="Material.635"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.053.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.ringFinger_link">
+    <visual name="i01.rightHand.ringFingerPhal1">
+      <origin rpy="-1.15751 -0.61920 -0.08681" xyz="3.38539 -6.39614 -2.39316"/>
+      <material name="Material.634"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.058.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.ringfinger0_link">
+    <visual name="i01.rightHand.WristSmall">
+      <origin rpy="-1.15751 -0.61920 0.68804" xyz="7.22704 -2.35455 -2.38651"/>
+      <material name="Material.631"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.066.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.ringfinger2_link">
+    <visual name="i01.rightHand.ringFingerPhal2">
+      <origin rpy="-1.15751 -0.61920 -0.08681" xyz="3.38797 -6.05509 -2.38631"/>
+      <material name="Material.638"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.059.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.ringfinger3_link">
+    <visual name="i01.rightHand.ringFingerPhal3">
+      <origin rpy="-1.15751 -0.61920 -0.08681" xyz="3.38900 -5.82812 -2.38199"/>
+      <material name="Material.642"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.060.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.thumb1_link">
+    <visual name="i01.rightHand.ThumbBase">
+      <origin rpy="2.05362 0.62375 -0.06004" xyz="5.06759 5.98847 2.72987"/>
+      <material name="Material.628"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.063.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.thumb3_link">
+    <visual name="i01.rightHand.ThumbTip">
+      <origin rpy="1.70890 0.82776 -1.11671" xyz="8.38306 -0.31675 0.03958"/>
+      <material name="Material.626"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.062.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.thumb_link">
+    <visual name="i01.rightHand.ThumbMid">
+      <origin rpy="1.70891 0.82776 -1.11670" xyz="8.37077 0.01373 0.04665"/>
+      <material name="Material.627"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.061.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="i01.rightHand.wrist.001_link">
+    <visual name="i01.rightHand.Wristlarge.001">
+      <origin rpy="0.41605 -0.00000 -0.63517" xyz="4.19587 2.33260 -6.97630"/>
+      <material name="Material.629"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.204.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_elbow_x_link">
+    <visual name="i01.left.bicep.full">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.007.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.001">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.236.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.002">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.237.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.003">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.238.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.004">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.239.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.005">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.240.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.006">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.241.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.007">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.242.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.008">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.243.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.009">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.244.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.010">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.245.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.011">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.246.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.left.bicep.full.012">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-2.07702 0.12073 -10.83652"/>
+      <material name="Material.022"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.247.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_shoulder_x_link">
+    <visual name="i01package://sentience_gzleftArm.shoulder.full">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.239"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.003.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.001">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.254.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.002">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.255.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.003">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.256.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.004">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.257.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.005">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.258.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.006">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.259.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.007">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.260.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.008">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.261.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.009">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.262.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.010">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.263.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.011">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.264.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.012">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.265.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.013">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.266.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.014">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.267.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.015">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.268.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.016">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.269.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01package://sentience_gzleftArm.shoulder.full.017">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.46578 1.11459 -13.51522"/>
+      <material name="Material.390"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.270.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_shoulder_y_link">
+    <visual name="i01.leftArm.omoplate.full">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.35226 1.11649 -13.89027"/>
+      <material name="Material.254"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.004.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.omoplate.full.001">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.35226 1.11649 -13.89027"/>
+      <material name="Material.254"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.248.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.omoplate.full.002">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.35226 1.11649 -13.89027"/>
+      <material name="Material.254"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.249.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.omoplate.full.003">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.35226 1.11649 -13.89027"/>
+      <material name="Material.254"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.250.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.omoplate.full.004">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.35226 1.11649 -13.89027"/>
+      <material name="Material.254"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.251.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.omoplate.full.005">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.35226 1.11649 -13.89027"/>
+      <material name="Material.254"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.252.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.omoplate.full.006">
+      <origin rpy="0.06568 0.00000 0.00000" xyz="-1.35226 1.11649 -13.89027"/>
+      <material name="Material.254"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.253.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_shoulder_z_link">
+    <visual name="i01.leftArm.rotate.full">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.001">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.001.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.002">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.002.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.003">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.003.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.004">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.004.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.005">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.005.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.006">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.006.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.007">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.007.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.008">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.008.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.009">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.009.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.010">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.010.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.011">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.011.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.012">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.012.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.013">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.013.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.014">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.014.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.015">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.015.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.016">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.016.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.017">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.017.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.018">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.018.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.019">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.019.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.leftArm.rotate.full.020">
+      <origin rpy="-0.00792 -0.00000 -0.00000" xyz="-2.08983 1.12391 -12.92101"/>
+      <material name="[0131_Silver].001"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__564753.020.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_wrist_z_link">
+    <visual name="i01.leftHand.Wristlarge">
+      <origin rpy="0.41605 0.00000 0.00000" xyz="-1.98935 4.36716 -7.14138"/>
+      <material name="Material.602"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.039.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="neck_link">
+    <visual name="i01.head.nekHinge">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00144 -0.19608 -15.39810"/>
+      <material name="Material.047"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.015.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.nekHinge.001">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00144 -0.19608 -15.39810"/>
+      <material name="Material.047"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.083.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.nekHinge.002">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00144 -0.19608 -15.39810"/>
+      <material name="Material.047"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.084.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.head.nekHinge.003">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00144 -0.19608 -15.39810"/>
+      <material name="Material.047"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.085.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_elbow_x_link">
+    <visual name="i01.right.bicep.full">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.008.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.001">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.205.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.002">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.206.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.003">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.207.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.004">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.208.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.005">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.209.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.006">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.210.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.007">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.211.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.008">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.212.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.009">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.213.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.010">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.214.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.011">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.215.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.right.bicep.full.012">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="2.08125 0.12073 -10.83653"/>
+      <material name="Material.031"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.216.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_shoulder_x_link">
+    <visual name="i01.rightArm.shoulder.full">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.005.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.001">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.223.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.002">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.224.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.003">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.225.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.004">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.226.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.005">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.012"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.227.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.006">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.228.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.007">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.229.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.008">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.230.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.009">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.231.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.011">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.233.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.shoulder.full.012">
+      <origin rpy="-0.06568 -0.00000 -3.14159" xyz="1.46576 1.11459 -13.51522"/>
+      <material name="Material.238"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.234.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_shoulder_y_link">
+    <visual name="i01.rightArm.omoplate.full">
+      <origin rpy="0.06568 -0.00000 -0.00000" xyz="1.35226 1.11648 -13.89026"/>
+      <material name="Material.016"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.006.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.omoplate.full.001">
+      <origin rpy="0.06568 -0.00000 -0.00000" xyz="1.35226 1.11648 -13.89026"/>
+      <material name="Material.016"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.217.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.omoplate.full.002">
+      <origin rpy="0.06568 -0.00000 -0.00000" xyz="1.35226 1.11648 -13.89026"/>
+      <material name="Material.016"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.218.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.omoplate.full.003">
+      <origin rpy="0.06568 -0.00000 -0.00000" xyz="1.35226 1.11648 -13.89026"/>
+      <material name="Material.016"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.219.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.omoplate.full.004">
+      <origin rpy="0.06568 -0.00000 -0.00000" xyz="1.35226 1.11648 -13.89026"/>
+      <material name="Material.016"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.220.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.omoplate.full.005">
+      <origin rpy="0.06568 -0.00000 -0.00000" xyz="1.35226 1.11648 -13.89026"/>
+      <material name="Material.016"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.221.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.omoplate.full.006">
+      <origin rpy="0.06568 -0.00000 -0.00000" xyz="1.35226 1.11648 -13.89026"/>
+      <material name="Material.016"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.222.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_shoulder_z_link">
+    <visual name="i01.rightArm.rotate.full">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.001">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.001.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.002">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.002.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.003">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.003.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.004">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.004.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.005">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.005.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.006">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.006.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.007">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.007.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.008">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.008.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.009">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.009.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.010">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.010.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.011">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.011.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.012">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.012.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.013">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.013.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.014">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.014.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.015">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.015.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.016">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.016.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.017">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.017.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.018">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.018.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.019">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.019.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.rightArm.rotate.full.020">
+      <origin rpy="3.13367 0.00000 0.00000" xyz="2.08983 1.12392 -12.92101"/>
+      <material name="[0131_Silver]"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/G-__566220.020.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_wrist_z_link">
+    <visual name="i01.rightHand.Wristlarge">
+      <origin rpy="0.41605 0.00000 0.00000" xyz="1.99358 4.36715 -7.14139"/>
+      <material name="Material.629"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.065.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="stand_link"/>
+  <link name="torso_bottom_link">
+    <visual name="i01.torso.midstom.full">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.002.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.001">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.195.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.002">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.196.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.003">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.197.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.004">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.198.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.005">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.199.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.006">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.200.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.007">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.201.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.008">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.202.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.midstom.full.009">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.44365 -8.97279"/>
+      <material name="Material.008"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.203.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="torso_y_link">
+    <visual name="i01.torso.full">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.001">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.088.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.002">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.089.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.003">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.090.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.004">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.091.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.005">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.092.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.006">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.093.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.007">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.094.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.008">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.095.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.009">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.096.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.010">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.097.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.011">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.098.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.012">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.099.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.013">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.100.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.014">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.101.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.015">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.102.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.016">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.103.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.017">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.104.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.018">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.105.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.019">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.106.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.020">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.107.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.021">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.108.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.022">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.109.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.023">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.110.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.024">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.111.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.025">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.112.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.026">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.113.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.027">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.114.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.028">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.115.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.029">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.116.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.030">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.117.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.031">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.118.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.032">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.119.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.033">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.120.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.034">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.121.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.035">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.122.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.036">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.123.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.037">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.124.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.038">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.125.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.039">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.126.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.040">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.127.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.041">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.128.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.042">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.129.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.043">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.130.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.044">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.131.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.045">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.132.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.046">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.133.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.047">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.134.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.048">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.135.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.049">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.136.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.050">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.137.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.051">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.138.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.052">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.139.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.053">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.140.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.054">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.141.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.055">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.142.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.056">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.143.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.057">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.144.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.058">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.145.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.059">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.146.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.060">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.147.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.061">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.148.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.062">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.149.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.063">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.150.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.064">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.151.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.065">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.152.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.066">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.153.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.067">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.154.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.068">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.155.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.069">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.156.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.070">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.157.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.071">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.158.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.072">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.159.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.073">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.160.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.074">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.161.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.075">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.162.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.076">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.163.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.077">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.164.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.078">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.165.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.full.079">
+      <origin rpy="0.06589 -0.00000 -0.00000" xyz="0.00246 1.11602 -11.08254"/>
+      <material name="Material.026"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.166.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="torso_z_link">
+    <visual name="i01.torso.topStom.full">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.001.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.001">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.167.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.002">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.168.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.003">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.169.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.004">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.170.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.005">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.171.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.006">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.172.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.007">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.173.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.008">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.174.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.009">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.175.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.010">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.176.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.011">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.177.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.012">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.178.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.013">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.179.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.014">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.180.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.015">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.181.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.016">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.182.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.017">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.183.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.018">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.184.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.019">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.185.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.020">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.186.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.021">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.187.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.022">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.188.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.023">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.189.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.024">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.190.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.025">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.191.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.026">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.192.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.027">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.193.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+    <visual name="i01.torso.topStom.full.028">
+      <origin rpy="0.06589 0.00000 -1.57080" xyz="1.05285 -0.00213 -10.06338"/>
+      <material name="Material.007"/>
+      <geometry>
+        <mesh filename="package://sentience_gz/meshes/stl/Texture.194.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <material name="Material.007">
+    <color rgba="0.46275 0.28235 0.10588 1.00000"/>
+  </material>
+  <material name="Material.008">
+    <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.012">
+    <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.016">
+    <color rgba="0.01569 0.01569 0.02745 1.00000"/>
+  </material>
+  <material name="Material.022">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.026">
+    <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.031">
+    <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.035">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.038">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.044">
+    <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.046">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.047">
+    <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.238">
+    <color rgba="0.76078 0.75686 0.80000 1.00000"/>
+  </material>
+  <material name="Material.239">
+    <color rgba="0.00000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.254">
+    <color rgba="0.01569 0.01569 0.02745 1.00000"/>
+  </material>
+  <material name="Material.390">
+    <color rgba="0.94510 0.96078 0.90980 1.00000"/>
+  </material>
+  <material name="Material.601">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.602">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.603">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.604">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.605">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.606">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.607">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.608">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.609">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.610">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.611">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.612">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.613">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.614">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.615">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.616">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.617">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.618">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.626">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.627">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.628">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.629">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.630">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.631">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.632">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.633">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.634">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.635">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.636">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.637">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.638">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.639">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.640">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.641">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.642">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="Material.643">
+    <color rgba="1.00000 1.00000 1.00000 1.00000"/>
+  </material>
+  <material name="[0131_Silver]">
+    <color rgba="0.74902 0.74902 0.74902 1.00000"/>
+  </material>
+  <material name="[0131_Silver].001">
+    <color rgba="0.74902 0.74902 0.74902 1.00000"/>
+  </material>
+</robot>
