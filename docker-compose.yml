@@ -1,0 +1,10 @@
+services:
+  ros_ws:
+    image: ghcr.io/sentience-robotics/ros_ws:humble
+    restart: no
+    command: tail -f /dev/null
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - .:/home/rosdev/ros2_ws/src/inmoov_ros_sim
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
