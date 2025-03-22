@@ -1,4 +1,4 @@
-# InMoov URDF Simulator
+# InMoov ROS 2 simulation package
 
 This repository provides a ROS package for simulation of the InMoov robot platform.
 
@@ -28,24 +28,23 @@ The simulator is shipped in a ROS 2 - ready to use - package
 
 ### Setup workspace
 
-Create a workspace
+Create a workspace (here `inmoov_ws`) with an `src` folder and clone the repository in it
 
 ```bash
-mkdir ws && cd ws
+git clone git@github.com:Sentience-Robotics/inmoov_ros_sim.git inmoov_ws/src/inmoov_ros_sim
 ```
 
-Clone the repository in the src folder
+Go to `inmoov_ws/src/inmoov_ros_sim/`
 
 ```bash
-git clone https://github.com/Sentience-Robotics/simulator.git src/sentience_gz
+cd inmoov_ws/src/inmoov_ros_sim/
 ```
 
 ### Install dependencies
 
-Install dependencies, you can either use the provided docker image or install them:
-
+To install dependencies, you can either use the provided docker image (**A**) or install ROS 2 Humble locally (**B**):
 <details>
-<summary>Local Installation (Ubuntu 22.04 only)</summary>
+<summary>A - Local Installation (Only if you're on Ubuntu 22.04)</summary>
 
 For a local installation, you have to install the following dependencies:
 - ROS 2 Humble
@@ -97,7 +96,7 @@ source /opt/ros/humble/setup.zsh
 </details>
 
 <details>
-<summary>Docker Installation</summary>
+<summary>B -Docker Installation</summary>
 
 Authorize the docker to access the X server
 
@@ -150,7 +149,7 @@ source ./install/local_setup.zsh
 ## 🚀 Launch the package
 
 ```bash
-ros2 launch sentience_gz main.launch.py
+ros2 launch inmoov_ros_sim main.launch.py
 ```
 
 ---
