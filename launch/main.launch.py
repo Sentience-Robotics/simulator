@@ -9,13 +9,13 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
   # Set the path to this package.
-  pkg_share = FindPackageShare(package='sentience_gz').find('sentience_gz')
+  pkg_share = FindPackageShare(package='inmoov_ros_sim').find('inmoov_ros_sim')
 
   # Set the path to the RViz configuration settings
   default_rviz_config_path = os.path.join(pkg_share, 'rviz/rviz_basic_settings.rviz')
 
   # Set the path to the URDF file
-  default_urdf_model_path = os.path.join(pkg_share, 'urdf/sentience_gz.urdf')
+  default_urdf_model_path = os.path.join(pkg_share, 'urdf/inmoov.urdf')
 
   ########### YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ##############
   # Launch configuration variables specific to simulation

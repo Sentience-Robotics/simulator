@@ -12,24 +12,24 @@ help:
 	@echo "  logs:    View output from containers"
 
 start:
-	$(DOCKER_COMPOSE) start
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) start
 
 stop:
-	$(DOCKER_COMPOSE) stop
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) stop
 
 restart:
-	$(DOCKER_COMPOSE) restart
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) restart
 
 up:
-	$(DOCKER_COMPOSE) up -d
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) up -d
 
 down:
-	$(DOCKER_COMPOSE) down
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) down
 
 term:
-	$(DOCKER_COMPOSE) exec ros_ws zsh
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) exec ros_ws zsh
 
 logs:
-	$(DOCKER_COMPOSE) logs -f
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) logs -f
 
 .PHONY: help start stop restart up down term
