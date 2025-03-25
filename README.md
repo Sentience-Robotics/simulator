@@ -154,28 +154,21 @@ ros2 launch inmoov_ros_sim main.launch.py
 
 ---
 
+## 📜 Code of Conduct
+
+We value the participation of each member of our community and are committed to ensuring that every interaction is respectful and productive. To foster a positive environment, we ask you to read and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+By participating in this project, you agree to uphold this code in all your interactions, both online and offline. Let's work together to maintain a welcoming and inclusive community for everyone.
+
+If you encounter any issues or have questions regarding the Code of Conduct, please contact us at [contact@sentience-robotics.fr](mailto:contact@sentience-robotics.fr).
+
+Thank you for being a part of our community!
+
+---
+
 ## 🤝 Contributing
 
-We welcome contributions! Follow these steps to contribute:
-
-- 1️⃣ **Fork** the repository<br>
-- 2️⃣ **Create a feature branch:**<br>
-    ```bash
-    git switch -C <feat|evol|fix>/<amzing-feature>
-    ```
-- 3️⃣ **Commit your changes:**<br>
-    ```bash
-    git commit -sm '<feat|evol|fix>/<amzing-feature>'
-    ```
-- 4️⃣ **Push to your branch:**<br>
-    ```bash
-    git push origin <feat|evol|fix>/<amzing-feature>
-    ```
-- 5️⃣ **Open a Pull Request**<br>
-
-Please ensure that:
-1. your **Pull Request & commits** respects the indicated **naming convention**
-2. your commits are **signed** (use `-s` flag)
+To find out more on how you can contribute to the project, please check our [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
