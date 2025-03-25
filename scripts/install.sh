@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir inmoov_ws
-cd inmoov_ws
+mkdir inmoov_ros_sim
+cd inmoov_ros_sim
 
 base_url="$(pwd)/scripts"
 
@@ -11,14 +11,16 @@ if [[ ! -x "$git" ]]; then
     exit 1
 fi
 
-if [ "$(ls -A)" ]; then
+if [[ "$(ls -A)" ]]; then
     echo -e "\033[31m\033[1mdirectory must be empty\033[0m"
     exit 1
 fi
 
-# TODO CHANGE
+read -p "Enter the branch name [master]: " branch < /dev/tty
+branch=${branch:-master}
+
 echo -e "\033[32m\033[1mCloning repository...\033[0m"
-$git clone --branch mbo/install_script https://github.com/Sentience-Robotics/inmoov_ros_sim.git . 2> /dev/null
+$git clone --branch $branch https://github.com/Sentience-Robotics/inmoov_ros_sim.git . 2> /dev/null
 
 echo "Do you prefer to use a local or a docker installation?"
 read -p "Choice (local/docker) [l/D]: " choice < /dev/tty

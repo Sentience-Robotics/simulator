@@ -9,4 +9,6 @@ else
     exit 1
 fi
 
-echo "Installation complete, use make term to access the container"
+echo -e "\033[32m\033[1mInstallation complete\033[0m, you can now access the container with the following commands:"
+echo "  cd inmoov_ros_sim"
+echo "  make dc-term"

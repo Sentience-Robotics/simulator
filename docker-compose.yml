@@ -9,4 +9,4 @@ services:
     restart: no
     command: tail -f /dev/null
     volumes:
-      - .:/home/rosdev/ros2_ws/src/inmoov_ros_sim
+      - .:/home/rosdev/ros2_ws/
