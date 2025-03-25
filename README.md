@@ -29,7 +29,7 @@ The simulator is shipped in a ROS 2 - ready to use - package
 Execute the installation script
 
 ```bash
- curl -fsSL https://raw.githubusercontent.com/Sentience-Robotics/inmoov_ros_sim/mbo/install_script/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Sentience-Robotics/inmoov_ros_sim/mbo/install_script/scripts/install.sh | bash
 ```
 
 A X server is mandatory to run the RViz simulation

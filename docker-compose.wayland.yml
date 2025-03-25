@@ -1,9 +1,11 @@
 services:
   ros_ws:
     environment:
-      - DISPLAY=$DISPLAY
-      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
-      - XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR
+      - DISPLAY=${DISPLAY}
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR:rw
+    devices:
+      - /dev/dri:/dev/dri

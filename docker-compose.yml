@@ -6,6 +6,7 @@ services:
       args:
         - "UID=$DOCKER_UID"
         - "GID=$DOCKER_GID"
+    privileged: true
     restart: no
     command: tail -f /dev/null
     volumes:

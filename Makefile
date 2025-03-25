@@ -30,6 +30,7 @@ dc-restart:
 	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) restart
 
 dc-term:
+	xhost +
 	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) exec ros_ws zsh
 
 dc-logs:
