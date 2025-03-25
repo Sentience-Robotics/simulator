@@ -2,34 +2,47 @@ DOCKER_COMPOSE := $(shell if command -v docker-compose > /dev/null 2>&1; then ec
 
 help:
 	@echo "Available commands:"
-	@echo "  help:    Show this help message"
-	@echo "  up:      Create and start containers"
-	@echo "  down:    Stop and remove containers"
-	@echo "  restart: Restart containers"
-	@echo "  start:   Start containers"
-	@echo "  stop:    Stop containers"
-	@echo "  term:    Open a terminal in the container"
-	@echo "  logs:    View output from containers"
+	@echo "  help:       Show this help message"
+	@echo "  dc-up:      Create and start containers"
+	@echo "  dc-down:    Stop and remove containers"
+	@echo "  dc-start:   Start containers"
+	@echo "  dc-stop:    Stop containers"
+	@echo "  dc-restart: Restart containers"
+	@echo "  dc-term:    Open a terminal in the container"
+	@echo "  dc-logs:    View output from containers"
+	@echo "  ros-build:  Build ROS2 workspace"
+	@echo "  ros-run:    Run ROS2 launch file"
+	@echo "  ros-clean:  Clean ROS2 workspace"
 
-start:
-	$(DOCKER_COMPOSE) start
+dc-up:
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) up -d
 
-stop:
-	$(DOCKER_COMPOSE) stop
+dc-down:
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) down
 
-restart:
-	$(DOCKER_COMPOSE) restart
+dc-start:
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) start
 
-up:
-	$(DOCKER_COMPOSE) up -d
+dc-stop:
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) stop
 
-down:
-	$(DOCKER_COMPOSE) down
+dc-restart:
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) restart
 
-term:
-	$(DOCKER_COMPOSE) exec ros_ws zsh
+dc-term:
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) exec ros_ws zsh
 
-logs:
-	$(DOCKER_COMPOSE) logs -f
+dc-logs:
+	DOCKER_UID=$(shell id -u) DOCKER_GID=$(shell id -g) $(DOCKER_COMPOSE) logs -f
 
-.PHONY: help start stop restart up down term
+ros-build:
+	colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON
+
+ros-run:
+	ros2 launch inmoov_ros_sim main.launch.py
+
+ros-clean:
+	rm -rf build install log
+
+.PHONY: help dc-up dc-down dc-start dc-stop dc-restart dc-term dc-logs \
+	ros-build ros-run ros-clean
