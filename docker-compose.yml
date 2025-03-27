@@ -1,13 +1,11 @@
 services:
   ros_ws:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        - "UID=$DOCKER_UID"
-        - "GID=$DOCKER_GID"
-    privileged: true
-    restart: no
-    command: tail -f /dev/null
+    image: ghcr.io/sentience-robotics/ros2_base:humble
+    environment:
+      - PUID=$DOCKER_UID
+      - PGID=$DOCKER_GID
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
     volumes:
-      - .:/home/rosdev/ros2_ws/
+      - .:/config/ros2_ws/
